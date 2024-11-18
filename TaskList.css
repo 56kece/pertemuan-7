@@ -1,0 +1,99 @@
+/* Card styling */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(45, 14, 220, 0.1);
+    color : rgb(22, 22, 230);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  /* Grid layout for task list */
+  .card-body {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Task, Priority, Status, Actions */
+    gap: 1rem; /* Space between columns */
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  /* Header row styling */
+  .header-row {
+    display: contents; /* Let grid manage the layout */
+    font-weight: bold;
+    background-color: #f8f9fa; /* Light background for the header */
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .header-row > div {
+    padding: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2713de;
+  }
+  
+  /* Data row styling */
+  .data-row {
+    display: contents;
+    color: #555;
+  }
+  
+  .data-row > div {
+    padding: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  /* Action buttons styling */
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .card-body {
+      grid-template-columns: 1fr 1fr 1fr 1fr; /* All columns stack into a single column layout on small screens */
+      text-align: left;
+    }
+  
+    .header-row > div {
+      text-align: left;
+      padding-left: 1rem;
+    }
+  
+    .data-row > div {
+      text-align: left;
+      padding-left: 1rem;
+    }
+  
+    .action-buttons {
+      justify-content: flex-start;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card-body {
+      grid-template-columns: 1fr; /* Stacks everything into a single column for very small screens */
+      grid-template-rows: repeat(4, auto);
+    }
+  
+    .header-row {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+  
+    .data-row {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+  
